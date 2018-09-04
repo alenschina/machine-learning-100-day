@@ -28,6 +28,18 @@ from sklearn.preprocessing import LabelEncoder
 labelencoder_X = LabelEncoder()
 X[:, 0] = labelencoder_X.fit_transform(X[:, 0])
 
-# splotting the dataset into test set and training set
+# Splotting the dataset into test set and training set
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+print(X_train)
+print(X_test)
+
+# Feature scaling
+from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.fit_transform(X_test)
+
+print(X_train)
+print(X_test)
